@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>University Portal</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      display: flex;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #ffffff; 
+      color: #333; 
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      border-right: 1px solid #ddd; 
+    }
+
+    .sidebar-header {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: white;
+      background: linear-gradient(to right, #1a76d2, #144975); 
+      padding: 10px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+    }
+
+    .menu-icon {
+      font-size: 24px;
+      margin-right: 10px;
+    }
+
+    .sidebar-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 16px;
+      padding: 10px;
+      color: #333;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      border-radius: 5px;
+    }
+
+    .sidebar-item:hover {
+      background-color: #f0f0f0;
+    }
+
+    .sidebar-item .icon {
+      margin-right: 10px;
+    }
+
+    .arrow {
+      transition: transform 0.3s;
+    }
+
+    .dropdown-content {
+      display: none;
+      flex-direction: column;
+      padding-left: 20px;
+      gap: 5px;
+    }
+
+    .dropdown-item {
+      font-size: 14px;
+      color: #555; 
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: color 0.3s, background-color 0.3s;
+    }
+
+    .dropdown-item:hover {
+      background-color: #eaeaea; 
+      color: #333;
+    }
+
+    .rotate {
+      transform: rotate(90deg);
+    }
+
+    .main-content {
+      flex-grow: 1;
+      padding: 20px;
+      background-color: #F2F2F2;
+    }
+
+    .header {
+      background-color: #153e75;
+      color: white;
+      padding: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <span class="menu-icon">☰</span> VTOP Menu
+      </div>
+
+      <div class="sidebar-item" onclick="toggleDropdown('details-dropdown', this)">
+        <span><span class="icon">👤</span> My Info</span>
+        <span class="arrow">▶</span>
+      </div>
+      <div id="details-dropdown" class="dropdown-content">
+        <div class="dropdown-item">View Profile</div>
+        <div class="dropdown-item">Edit Profile</div>
+      </div>
+
+      <div class="sidebar-item" onclick="toggleDropdown('ambulance-dropdown', this)">
+        <span><span class="icon">🚑</span> Request Ambulance</span>
+        <span class="arrow">▶</span>
+      </div>
+      <div id="ambulance-dropdown" class="dropdown-content">
+        <div class="dropdown-item" onclick="redirectToPage()">Emergency Contact</div>
+        <div class="dropdown-item">Nearest Hospital</div>
+      </div>
+
+      <div class="sidebar-item" onclick="toggleDropdown('certificate-dropdown', this)">
+        <span><span class="icon">📄</span> Medical Certificate Issuance</span>
+        <span class="arrow">▶</span>
+      </div>
+      <div id="certificate-dropdown" class="dropdown-content">
+        <div class="dropdown-item">Apply for Certificate</div>
+        <div class="dropdown-item">View Status</div>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <div class="header">
+        University Portal 
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleDropdown(id, element) {
+      const dropdown = document.getElementById(id);
+      const arrow = element.querySelector('.arrow');
+
+      if (dropdown.style.display === "flex") {
+        dropdown.style.display = "none";
+        arrow.classList.remove("rotate");
+      } else {
+        dropdown.style.display = "flex";
+        arrow.classList.add("rotate");
+      }
+    }
+    function redirectToPage(){
+      window.location.href="request_ambulance.html";
+    }
+  </script>
+
+</body>
+</html>

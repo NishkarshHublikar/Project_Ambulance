@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIT-AP - VTOP</title>
+</head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+<body>
+    <nav class="navbar navbar-expand-lg bg-light headerBackgroundColor py-1 fixed-top " id="vtopOpenPageHeader">
+        <div class="container-fluid justify-content-start">
+            <a class="navbar-brand" href="javacript:void(0);">
+                <img src="/vtop/assets/img/VIT_AP_logo.png" width="170px" alt="">
+            </a>   
+        </div>
+    </nav>
+    <h2 class="title">
+        VTOP translates to "VIT on TOP"
+    </h2>
+    <h4 class="sub_title">
+      A digital initiative by the institute facilitating Faculty, Staff, Students, to access ambulance and medical  Supporting services at one common platform.
+    </h4>
+    <div class=" row py-3 g-2">
+        <div class="card_student  shadow  card-body card ">student
+            <!-- <img src="/vtop/assets/img/students.png" class="img-responsive center imgSize" alt="..."> -->
+            <button type="submit" class="btn btn-primary fw-bold" onclick="redirectToPageStudent()">
+                <i id="first-btn" class="fa-solid fa-right-to-bracket"></i>
+            </button>
+        </div>
+        <div class="card_doctor card-body  shadow  card ">doctor
+            <button type="submit" class="btn btn-outline fw-bold doctorbtncolor" onclick="redirectToPageDoctor()">
+                <iid="second-btn" class="fa-solid fa-right-to-bracket"></i>
+            </button>
+        </div>
+        <div class="card_faculty card-body shadow  card">faculty
+            <button type="submit" class="btn btn-success fw-bold" onclick="redirectToPageFaculty()">
+                <iid="third-btn" class="fa-solid fa-right-to-bracket"></i>
+            </button>
+        </div>
+    </div>
+    <script>
+        function redirectToPageStudent(){
+            window.location.href="studentLogin.html";
+        }
+        function redirectToPageFaculty(){
+            window.location.href="facultyLogin.html";
+        }
+        function redirectToPageDoctor(){
+            window.location.href="doctorLogin.html";
+        }
+    </script>
+</body>
+</html>
